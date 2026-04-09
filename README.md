@@ -4,6 +4,8 @@ A small Express + PostgreSQL app for practicing server-side rendering with EJS a
 
 ![Screenshot](./assets/screenshot.png)
 
+![Local](./assets/local-db.png)
+
 ## Features
 
 - View all users from PostgreSQL

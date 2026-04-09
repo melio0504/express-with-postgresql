@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1><%= title %></h1>
+
+      <form action="/" method="GET" class="search-form">
+        <label for="search">Search usernames</label>
+        <input
+          id="search"
+          name="search"
+          type="text"
+          value="<%= search || '' %>"
+          placeholder="Try: sup"
+        />
+        <button type="submit">Search</button>
+        <a href="/" class="secondary-link">Clear</a>
+      </form>
+
+      <ul class="users-list">
+        <% if (locals.users && users.length) { %>
+          <% users.forEach(user => { %>
+            <li>
+              <span>ID <%= user.id %></span>
+              <strong><%= user.username %></strong>
+            </li>
+          <% }); %>
+        <% } else { %>
+          <li>No users found.</li>
+        <% } %>
+      </ul>
+
+      <div class="actions">
+        <a href="/create">Create a user</a>
+        <a href="/delete" class="danger">Delete all users</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
